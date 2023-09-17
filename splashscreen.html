@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>ConnectRecharge</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/framework.css">
+    <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+    <script type="text/javascript">
+    // Set timeout variables.
+    //var timoutWarning = 3000 //840000; // Display warning in 14 Mins.
+    var timoutNow = 1000; //3 secs //300000; - Timeout in 15 mins.
+    var logoutUrl = 'login.aspx'; // URL to logout page.
+
+    //var warningTimer;
+    var timeoutTimer;
+
+    // Start timers.
+    function StartTimers() {
+       // warningTimer = setTimeout("IdleWarning()", timoutWarning);
+        timeoutTimer = setTimeout("IdleTimeout()", timoutNow);
+    }
+
+    // Reset timers.
+    function ResetTimers() {
+        //clearTimeout(warningTimer);
+        clearTimeout(timeoutTimer);
+        StartTimers();
+        //$("#timeout").dialog('close');
+    }
+
+    // Show idle timeout warning dialog.
+    //function IdleWarning() {
+    //    $("#timeout").dialog({
+    //        modal: true
+    //    });
+    //}
+
+    // Logout the user.
+    function IdleTimeout() {
+        window.location = logoutUrl;
+    }
+    </script>
+</head>
+<body onload="StartTimers();" onmousemove="ResetTimers();" class="bg-blue2-dark" >
+
+
+    <div id="page">
+
+        <div id="page-preloader">
+            <div class="loader-main"><div class="preload-spinner border-highlight"></div></div>
+        </div>
+
+
+        <div class="page-content header-clear-medium">
+
+            <div class="left-40 right-40">
+                <div class="content top-10 bottom-20">
+                    <p></p>
+                    <br /><br />
+                    <br /><br /><br /><br />
+                    <p class="center-text font-11 under-heading bottom-30 color-white">
+                        <img src="images/catchblue.png" />
+                        ...the standard for top-up.
+                    </p>
+                    <div class="divider top-30"></div>
+
+                    <div class="clear"></div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="menu-hider"></div>
+    </div>
+
+
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/plugins.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+</body>
+</body>
+</html>
